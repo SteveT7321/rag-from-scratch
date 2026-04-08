@@ -172,10 +172,13 @@ def extract_images_from_pdf(pdf_path: str) -> List[Dict]:
             if w < MIN_IMG_W or h < MIN_IMG_H:
                 continue  # 跳過太小的圖（icon、裝飾）
 
-            # 轉成 PNG bytes
-            if pix.n > 4:  # CMYK 轉 RGB
-                pix = fitz.Pixmap(fitz.csRGB, pix)
-            img_bytes = pix.tobytes("png")
+            # 轉成 PNG bytes（統一轉 RGB，處理 CMYK/灰階/特殊色域）
+            try:
+                if pix.colorspace and pix.colorspace != fitz.csRGB:
+                    pix = fitz.Pixmap(fitz.csRGB, pix)
+                img_bytes = pix.tobytes("png")
+            except Exception:
+                continue
 
             images.append({
                 "page": page_num + 1,
