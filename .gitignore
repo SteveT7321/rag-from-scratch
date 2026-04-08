@@ -1,0 +1,19 @@
+# 向量索引（大型二進位檔，不追蹤）
+**/index/
+
+# 圖片暫存
+**/images/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+
+# 環境變數
+.env
+
+# OS
+.DS_Store
+Thumbs.db
