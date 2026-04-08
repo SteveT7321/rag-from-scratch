@@ -40,8 +40,8 @@ TOP_K_PER_Q   = 6   # 每個子查詢取幾個候選
 FINAL_TOP_K   = 5   # RRF 後取幾個送給 LLM
 RRF_K         = 60  # RRF 公式中的 k 常數
 
-SHARED_INDEX = Path(__file__).parent.parent / "01_naive_rag" / "index"
-LOCAL_INDEX  = Path(__file__).parent / "index"
+SHARED_INDEX = Path(__file__).resolve().parent.parent / "01_naive_rag" / "index"
+LOCAL_INDEX  = Path(__file__).resolve().parent / "index"
 
 QUERY_GEN_PROMPT = """\
 針對以下問題，生成 {n} 個不同角度的搜尋查詢，用來在 Subaru BRZ 台灣車型冊中搜尋。

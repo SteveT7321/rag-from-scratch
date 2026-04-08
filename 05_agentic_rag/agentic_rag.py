@@ -40,8 +40,8 @@ CHUNK_OVERLAP = 50
 SEARCH_TOP_K  = 3
 MAX_STEPS     = 6   # ReAct 最大步數
 
-SHARED_INDEX = Path(__file__).parent.parent / "01_naive_rag" / "index"
-LOCAL_INDEX  = Path(__file__).parent / "index"
+SHARED_INDEX = Path(__file__).resolve().parent.parent / "01_naive_rag" / "index"
+LOCAL_INDEX  = Path(__file__).resolve().parent / "index"
 
 # ─── ReAct System Prompt ─────────────────────────────────────────────────────
 

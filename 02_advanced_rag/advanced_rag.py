@@ -38,8 +38,8 @@ TOP_K        = 4
 RERANK_POOL  = 12   # Re-ranking 前先取幾個候選
 
 # 預設共用 01 的索引
-SHARED_INDEX = Path(__file__).parent.parent / "01_naive_rag" / "index"
-LOCAL_INDEX  = Path(__file__).parent / "index"
+SHARED_INDEX = Path(__file__).resolve().parent.parent / "01_naive_rag" / "index"
+LOCAL_INDEX  = Path(__file__).resolve().parent / "index"
 
 PROMPT_TEMPLATE = """\
 你是一位熟悉 Subaru BRZ 的專家。請根據以下資料回答問題。
